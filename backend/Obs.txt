@@ -1,0 +1,42 @@
+1 - Instalar o nodejs via pacote usando o chocolatey: 
+        https://nodejs.org/en/download/package-manager/#windows
+        https://chocolatey.org/install
+2 - npm init -y
+	instala package.json - armazena as dependencias do projeto
+
+3 - npm install express
+    instalar o framework
+
+4 - No notebook tive que exec o comando npm i create-react-app -g antes de executar o comando 5
+5 - npx create-react-app NomeProjeto
+    Criar o projeto frontend react
+6 - npm start
+    executar comando dentro da pasta de frontend
+
+7 - app.use(express.json());
+
+8 - npm install nodemon -D
+    -D salva como um dependencia de desenvolvimento.
+
+9 - npm install knex
+    site: http://knexjs.org/
+    npm install NomeBancodeDados (ex: sqlite3, mongoDB, mySql)
+    Apos isso vai criar um arquivo chamado knexfile.js esse local sera onde configura o banco.
+
+10 - Definir as entidades e funcionalidades:
+     Entendidas sao tudo aquilo que sera salvo no banco de dados.(ex: ONG, Incidents)
+     funcionalidades sao tudo que a pagina ira ter.(ex: listar casos. cadastrar casos, cadastrar ONG)
+
+11 - npx knex migrate:make create_ongs
+     Definir em knexfile as config:   
+        FileName - Local onde vai ser criar o banco de dados
+        migrations - Local onde vai ser criado os migrations
+        useNullAsDefault: para os campos vazios serem nulo.
+     Criar a tabela ong dentro do banco
+     http://knexjs.org/#Installation-migrations
+
+12 - Apos configurar a tabela e os campos executar o comando:
+     npx knex migrate:latest
+     
+13 - npm istall cors
+     Responsavel por permitir o acesso do frontend ao backend
